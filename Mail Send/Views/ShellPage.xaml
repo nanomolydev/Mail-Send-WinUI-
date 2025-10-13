@@ -1,0 +1,177 @@
+﻿<Page
+    x:Class="Mail_Send.Views.ShellPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:helpers="using:Mail_Send.Helpers"
+    xmlns:behaviors="using:Mail_Send.Behaviors"
+    xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
+    xmlns:views="using:Mail_Send.ViewModels"
+    xmlns:tb="using:H.NotifyIcon"
+    Loaded="OnLoaded">
+    <Page.DataContext>
+        <views:localizated x:Name="ViewModel1" />
+    </Page.DataContext>
+    <Grid>
+        <tb:TaskbarIcon
+    ToolTipText="ToolTip"
+    Name="background"
+    IconSource="/Assets/WindowIcon.ico"
+    MenuActivation="LeftOrRightClick"
+    Visibility ="Visible"
+    >
+            <tb:TaskbarIcon.ContextFlyout >
+                <MenuFlyout AreOpenCloseAnimationsEnabled="False" >
+                    <MenuFlyoutItem CornerRadius="10" Text="Show/Hide Window" Name="visibility_window"  Command="{x:Bind ShowHideWindowCommand}" />
+                    <MenuFlyoutItem CornerRadius="10" Text="Exit" Command="{x:Bind ExitApplicationCommand}"/>
+                </MenuFlyout>
+            </tb:TaskbarIcon.ContextFlyout>
+        </tb:TaskbarIcon>
+        <Grid x:Name="AppTitleBar"
+              Canvas.ZIndex="1"
+              Height="{Binding ElementName=NavigationViewControl, Path=CompactPaneLength}"
+              IsHitTestVisible="True"
+              VerticalAlignment="Top">
+            <Image Source="/Assets/WindowIcon.ico"
+                   HorizontalAlignment="Left"
+                   Width="16"
+                   Height="16" />
+            <TextBlock x:Name="AppTitleBarText"
+                       VerticalAlignment="Center"
+                       TextWrapping="NoWrap"
+                       Style="{StaticResource CaptionTextBlockStyle}"
+                       Margin="28,0,0,0"/>
+        </Grid>
+        <NavigationView
+            x:Name="NavigationViewControl"
+            Canvas.ZIndex="0"
+            IsBackButtonVisible="Visible"
+            IsBackEnabled="{x:Bind ViewModel.IsBackEnabled, Mode=OneWay}"
+            SelectedItem="{x:Bind ViewModel.Selected, Mode=OneWay}"
+            SelectionChanged="NavigationViewControl_SelectionChanged"
+            IsSettingsVisible="True"
+            
+            ExpandedModeThresholdWidth="1280"
+            DisplayModeChanged="NavigationViewControl_DisplayModeChanged"
+            Header="{x:Bind ((ContentControl)ViewModel.Selected).Content, Mode=OneWay}">
+            <NavigationView.Resources>
+
+
+                <!-- Переопределение цвета индикатора выбора -->
+                <SolidColorBrush x:Key="NavigationViewSelectionIndicatorForeground" Color="#f4a232"/>
+
+
+                <!-- Переопределение цвета текста для выбранного элемента -->
+                <SolidColorBrush x:Key="NavigationViewItemForegroundSelected" Color="#546364"/>
+                <SolidColorBrush x:Key="NavigationViewItemForegroundSelectedPointerOver" Color="#546364"/>
+
+            </NavigationView.Resources>
+            <NavigationView.MenuItems>
+                <!--
+                TODO: Update item titles by updating <x:Uid>.Content entries in Strings/en-us/Resources.resw.
+                https://docs.microsoft.com/windows/uwp/app-resources/localize-strings-ui-manifest#refer-to-a-string-resource-identifier-from-xaml
+            
+                TODO: Update item icons by updating FontIcon.Glyph properties.
+                https://docs.microsoft.com/windows/apps/design/style/segoe-fluent-icons-font#icon-list
+                -->
+                <NavigationViewItem Icon="Send" Name="home_navigation" Foreground="#546364">
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Text="{x:Bind ViewModel1.GetString('home_page'), Mode=OneWay}"
+                        FontSize="16"
+                        Height="25"
+                        Style="{ThemeResource TitleTextBlockStyle}" />
+                </NavigationViewItem>
+                <NavigationViewItem Icon="Contact" Name="account_navigation" Foreground="#546364">
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Text="{x:Bind ViewModel1.GetString('account_page'), Mode=OneWay}"
+                        FontSize="16"
+                        Height="25"
+                        Style="{ThemeResource TitleTextBlockStyle}" />
+                </NavigationViewItem>
+                <NavigationViewItem Icon="List" Name="email_navigation" Foreground="#546364">
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Text="{x:Bind ViewModel1.GetString('email_page'), Mode=OneWay}"
+                        FontSize="16"
+                        Height="25"
+                        Style="{ThemeResource TitleTextBlockStyle}" />
+                </NavigationViewItem>
+                <NavigationViewItem Icon="OpenFile" Name="text_navigation" Foreground="#546364">
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Text="{x:Bind ViewModel1.GetString('text_page'), Mode=OneWay}"
+                        FontSize="16"
+                        Height="25"
+                        Style="{ThemeResource TitleTextBlockStyle}" />
+                </NavigationViewItem>
+                <NavigationViewItem Icon="Go" Name="chart_navigation" Foreground="#546364">
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Text="{x:Bind ViewModel1.GetString('charts_page'), Mode=OneWay}"
+                        FontSize="16"
+                        Height="25"
+                        Style="{ThemeResource TitleTextBlockStyle}" />
+                </NavigationViewItem>
+                <NavigationViewItem  Name="info" Foreground="#546364">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xF167;"></FontIcon>
+                    </NavigationViewItem.Icon>
+
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Text="{x:Bind ViewModel1.GetString('info'), Mode=OneWay}"
+                        FontSize="16"
+                        Height="25"
+                        Style="{ThemeResource TitleTextBlockStyle}" />
+                </NavigationViewItem>
+                <!--<NavigationViewItem  Name="shop" Foreground="#546364">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE719;"></FontIcon>
+                    </NavigationViewItem.Icon>
+
+                    <TextBlock
+                VerticalAlignment="Center"
+                HorizontalAlignment="Left"
+                Text="{x:Bind ViewModel1.GetString('shop'), Mode=OneWay}"
+                FontSize="16"
+                Height="25"
+                Style="{ThemeResource TitleTextBlockStyle}" />
+                </NavigationViewItem>-->
+                <!--<NavigationViewItem  Name="setting_navigation" Foreground="Green">
+                    <NavigationViewItem.Icon>
+                        <AnimatedIcon x:Name='AnimatedIcon'>
+                            <AnimatedIcon.Source>
+                                <animatedvisuals:AnimatedSettingsVisualSource/>
+                            </AnimatedIcon.Source>
+                            <AnimatedIcon.FallbackIconSource>
+                                <FontIconSource Glyph="&#xE713;"/>
+                            </AnimatedIcon.FallbackIconSource>
+                        </AnimatedIcon>
+                    </NavigationViewItem.Icon>
+
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Text="{x:Bind ViewModel1.GetString('setting_page'), Mode=OneWay}"
+                        FontSize="16"
+                        Height="25"
+                        Style="{ThemeResource TitleTextBlockStyle}" />
+                </NavigationViewItem>-->
+            </NavigationView.MenuItems>
+
+            <Grid >
+                <Frame x:Name="NavigationFrame" />
+            </Grid>
+        </NavigationView>
+    </Grid>
+</Page>

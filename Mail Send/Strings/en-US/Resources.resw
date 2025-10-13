@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AppDisplayName" xml:space="preserve">
+    <value>Mail Sendler</value>
+  </data>
+  <data name="AppDescription" xml:space="preserve">
+    <value>Mail Sendler</value>
+  </data>
+  <data name="Shell_Main.Content" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="add_account" xml:space="preserve">
+    <value>Add an account</value>
+  </data>
+  <data name="add_file" xml:space="preserve">
+    <value>Add a file</value>
+  </data>
+  <data name="add_text" xml:space="preserve">
+    <value>Add a Text</value>
+  </data>
+  <data name="add_text_or_folder" xml:space="preserve">
+    <value>Add a Text or Folder</value>
+  </data>
+  <data name="ai_assist" xml:space="preserve">
+    <value>AI assistant</value>
+  </data>
+  <data name="app_password_account" xml:space="preserve">
+    <value>Application Password</value>
+  </data>
+  <data name="attach_text_error" xml:space="preserve">
+    <value>You didn't attach the text to the emails</value>
+  </data>
+  <data name="auto_setting_string" xml:space="preserve">
+    <value>Automatic configuration</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Сancel</value>
+  </data>
+  <data name="check_account" xml:space="preserve">
+    <value>Checking your account</value>
+  </data>
+  <data name="close_button" xml:space="preserve">
+    <value />
+  </data>
+  <data name="copy_button" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="count_all_time" xml:space="preserve">
+    <value>Quantity for the entire period</value>
+  </data>
+  <data name="Create_folder" xml:space="preserve">
+    <value>Creating a folder</value>
+  </data>
+  <data name="day" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="delete_button" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="describe_product" xml:space="preserve">
+    <value>Describe your product or service</value>
+  </data>
+  <data name="df" xml:space="preserve">
+    <value />
+  </data>
+  <data name="email_account" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="email_empty" xml:space="preserve">
+    <value>Lack of mail</value>
+  </data>
+  <data name="error_log_in" xml:space="preserve">
+    <value>Couldn't log in under your account</value>
+  </data>
+  <data name="error_title" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="failed_created_subject" xml:space="preserve">
+    <value>Failed to create a form with this subject</value>
+  </data>
+  <data name="failed_created_text" xml:space="preserve">
+    <value>and this text:</value>
+  </data>
+  <data name="generate" xml:space="preserve">
+    <value>Generate</value>
+  </data>
+  <data name="good_send" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+  <data name="log_in_acc_error" xml:space="preserve">
+    <value>There is not a single logged-in account</value>
+  </data>
+  <data name="manual_setting_string" xml:space="preserve">
+    <value>Manual setup</value>
+  </data>
+  <data name="month" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="not_saved" xml:space="preserve">
+    <value>changes are not saved</value>
+  </data>
+  <data name="number_thread" xml:space="preserve">
+    <value>Number of threads</value>
+  </data>
+  <data name="random_string" xml:space="preserve">
+    <value>Random</value>
+  </data>
+  <data name="rename_button" xml:space="preserve">
+    <value>Rename</value>
+  </data>
+  <data name="return_email_block" xml:space="preserve">
+    <value>Return Email Block</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="selected_language" xml:space="preserve">
+    <value>Select a language</value>
+  </data>
+  <data name="send_error" xml:space="preserve">
+    <value>Failed to send</value>
+  </data>
+  <data name="setting_acc" xml:space="preserve">
+    <value>Account Setup</value>
+  </data>
+  <data name="week" xml:space="preserve">
+    <value>Week</value>
+  </data>
+  <data name="will_send" xml:space="preserve">
+    <value>Will be sent</value>
+  </data>
+  <data name="write_name_folder" xml:space="preserve">
+    <value>Enter the folder name</value>
+  </data>
+  <data name="year" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="account_page" xml:space="preserve">
+    <value>Accounts</value>
+  </data>
+  <data name="add_email" xml:space="preserve">
+    <value>Add a mail block</value>
+  </data>
+  <data name="charts_page" xml:space="preserve">
+    <value>Charts</value>
+  </data>
+  <data name="create_new_acc.PlaceholderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="email_page" xml:space="preserve">
+    <value>Email List</value>
+  </data>
+  <data name="en" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="failed_create_file" xml:space="preserve">
+    <value>Failed to create a form with this file</value>
+  </data>
+  <data name="home_page" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="ru" xml:space="preserve">
+    <value>Russian</value>
+  </data>
+  <data name="saved" xml:space="preserve">
+    <value>Saved</value>
+  </data>
+  <data name="setting_page" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="text_page" xml:space="preserve">
+    <value>Multimedia</value>
+  </data>
+  <data name="type_setting" xml:space="preserve">
+    <value>Setting type</value>
+  </data>
+  <data name="import" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="import_text" xml:space="preserve">
+    <value>We found a mapping of your buffer to the current page</value>
+  </data>
+  <data name="config" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="select_language" xml:space="preserve">
+    <value>Select the application language</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="password_account" xml:space="preserve">
+    <value>Account password</value>
+  </data>
+  <data name="account_not_verified" xml:space="preserve">
+    <value>Lack of accounts or accounts are not verified</value>
+  </data>
+  <data name="info" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="deviceid" xml:space="preserve">
+    <value>DeviceID</value>
+  </data>
+  <data name="get_deviceid" xml:space="preserve">
+    <value>Your Device Id</value>
+  </data>
+  <data name="shop" xml:space="preserve">
+    <value>Pricing</value>
+  </data>
+  <data name="continue" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="app_setting" xml:space="preserve">
+    <value>App</value>
+  </data>
+  <data name="copy_deviceid" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="current_version" xml:space="preserve">
+    <value>Updates</value>
+  </data>
+  <data name="update_button" xml:space="preserve">
+    <value>Check Update</value>
+  </data>
+  <data name="server" xml:space="preserve">
+    <value>SMTP server</value>
+  </data>
+  <data name="export" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="g" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pause" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="count_all_read" xml:space="preserve">
+    <value>Number of views</value>
+  </data>
+</root>

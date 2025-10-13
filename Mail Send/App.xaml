@@ -1,0 +1,56 @@
+﻿<Application
+    x:Class="Mail_Send.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:local="using:Mail_Send"
+    
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    RequestedTheme="Light">
+
+    <Application.Resources>
+
+        
+
+        <ResourceDictionary>
+            <Color x:Key="SystemAccentColor">#f4a232</Color>
+            <Color x:Key="SliderThumbBackground">#f4a232</Color>
+            <Color x:Key="SliderThumbBackgroundPointerOver">#f4a232</Color>
+            <Color x:Key="SliderThumbBackgroundPressed">#f4a232</Color>
+
+            <Color x:Key="SliderTrackValueFill">#f4a232</Color>
+            <Color x:Key="SliderTrackValueFillPointerOver">#f4a232</Color>
+            <Color x:Key="SliderTrackValueFillPressed">#f4a232</Color>
+            <Color x:Key="SliderTrackValueFillDisabled">#f4a232</Color>
+
+            <Color x:Key="CheckBoxCheckBackgroundFillChecked">#f4a232</Color>
+            <Color x:Key="CheckBoxCheckBackgroundFillCheckedPointerOver">#f4a232</Color>
+            <Color x:Key="CheckBoxCheckBackgroundFillCheckedPressed">#f4a232</Color>
+            <Color x:Key="CheckBoxCheckBackgroundFillCheckedDisabled">#f4a232</Color>
+
+            <Color x:Key="ToggleSwitchFillOn">#f4a232</Color>
+            <Color x:Key="ToggleSwitchFillOnPointerOver">#f4a232</Color>
+            <Color x:Key="ToggleSwitchFillOnPressed">#f4a232</Color>
+            <Color x:Key="ToggleSwitchFillOnDisabled">#f4a232</Color>
+
+            <Color x:Key="NavigationViewSelectionIndicatorForeground">#f4a232</Color>
+
+            <Color x:Key="SystemAccentColorLight3">#f4a232</Color>
+            <Color x:Key="SystemAccentColorLight2">#f4a232</Color>
+            <Color x:Key="SystemAccentColorLight1">#f4a232</Color>
+            <Color x:Key="SystemColorHighlightColor">#f4a232</Color>
+            <Color x:Key="SystemControlHighlightAccentBrush">#f4a232</Color>
+            <Color x:Key="SystemControlBackgroundAccentBrush">#f4a232</Color>
+            <Color x:Key="SystemControlDisabledAccentBrush">#f4a232</Color>
+            <Color x:Key="SystemControlHighlightAltAccentBrush">#f4a232</Color>
+
+            <ResourceDictionary.MergedDictionaries>
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+                <ResourceDictionary Source="/Styles/arlycbrush.xaml" />
+                <ResourceDictionary Source="/Styles/FontSizes.xaml" />
+                <ResourceDictionary Source="/Styles/Thickness.xaml" />
+                <ResourceDictionary Source="/Styles/TextBlock.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+        
+    </Application.Resources>
+    
+</Application>

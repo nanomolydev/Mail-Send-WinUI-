@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:media="using:Microsoft.UI.Xaml.Media"
+    xmlns:local="using:Mail_Send.Styles">
+    <media:AcrylicBrush x:Key="CustomAcrylicInAppBrush"
+            TintOpacity="0" TintLuminosityOpacity="0" TintColor="White" FallbackColor="White"/>
+
+
+</ResourceDictionary>

@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Mail Sendler (Package)": {
+      "commandName": "MsixPackage",
+      "alwaysReinstallApp": false
+    },
+    "Mail Sendler (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

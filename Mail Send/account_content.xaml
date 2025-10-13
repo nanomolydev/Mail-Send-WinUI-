@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="Mail_Send.account_content"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Mail_Send"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:views="using:Mail_Send.ViewModels"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <views:localizated x:Name="ViewModel" />
+    </Page.DataContext>
+    <Page.Resources>
+        <Style x:Key="CustomTextBoxStyle" TargetType="TextBox">
+            <Setter Property="BorderBrush" Value="#F4A232" />
+            <!-- Цвет границы -->
+            <Setter Property="Foreground" Value="Black" />
+            <!-- Цвет текста -->
+            <Setter Property="Background" Value="White" />
+            <!-- Цвет фона -->
+            <!-- Остальные настройки -->
+        </Style>
+    </Page.Resources>
+    <StackPanel Orientation="Vertical" Spacing="10">
+
+        <StackPanel Orientation="Horizontal" Spacing="20" >
+            <FontIcon Glyph="&#xE77B;"  FontSize="20" HorizontalAlignment="Left" Margin="20,0,0,0" Foreground="#F4A232"></FontIcon>
+            <TextBox  Name="account_name_textbox" HorizontalAlignment="Stretch"  VerticalAlignment="Center" VerticalContentAlignment="Center" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="50" CornerRadius="2" BorderThickness="1" TextChanged="account_name_changed">
+
+                <TextBox.BorderBrush>
+                    <SolidColorBrush Color="Gray" Opacity="0"/>
+                </TextBox.BorderBrush>
+            </TextBox>
+        </StackPanel>
+        <TextBox Style="{StaticResource CustomTextBoxStyle}" Name="account_email_textbox" PlaceholderText="{x:Bind ViewModel.GetString('email_account'), Mode=OneWay}" Margin="20,0,20,0" HorizontalAlignment="Stretch"  VerticalAlignment="Top" Background="White" Height="50" CornerRadius="2" BorderThickness="1" >
+
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="Gray" Opacity="0.2"/>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <TextBox Name="account_app_password_textbox" PlaceholderText="{x:Bind ViewModel.GetString('app_password_account'), Mode=OneWay}" Margin="20,0,20,0" HorizontalAlignment="Stretch"  VerticalAlignment="Top" Background="White" Height="50" CornerRadius="2" BorderThickness="1" >
+
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="Gray" Opacity="0.2"/>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <Button Content="{x:Bind ViewModel.GetString('save'), Mode=OneWay}" HorizontalAlignment="Center" Background="#F4A232" Name="save" Click="save_Click">
+            
+        </Button>
+
+    </StackPanel>
+</Page>

@@ -1,0 +1,494 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <RootNamespace>Mail_Send</RootNamespace>
+    <ApplicationIcon>Assets/WindowIcon.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Platforms>x86;x64;arm64</Platforms>
+    <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
+    <PublishProfile>Properties\PublishProfiles\win10-$(Platform).pubxml</PublishProfile>
+	<ImplicitUsings>enable</ImplicitUsings>
+	<Nullable>enable</Nullable>
+	<UseWinUI>true</UseWinUI>
+    <EnableMsixTooling>true</EnableMsixTooling>
+    <GenerateAppInstallerFile>True</GenerateAppInstallerFile>
+    <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
+    <PackageCertificateThumbprint>5EC1CAC56C0995BA03FDDA394945C296340D9F2C</PackageCertificateThumbprint>
+    <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
+    <GenerateTestArtifacts>True</GenerateTestArtifacts>
+    <AppxBundle>Always</AppxBundle>
+    <AppInstallerUri>C:\mlsend\</AppInstallerUri>
+    <AssemblyName>Mail Sendler</AssemblyName>
+    <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
+    <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="account.xaml" />
+    <None Remove="account_content.xaml" />
+    <None Remove="account_content_auto.xaml" />
+    <None Remove="Assets\animated_star.svg" />
+    <None Remove="Assets\star-06-svgrepo-com %282%29.svg" />
+    <None Remove="Assets\star-06-svgrepo-com.svg" />
+    <None Remove="Assets\svg-editor-image.svg" />
+    <None Remove="chrome-win64\121.0.6150.0.manifest" />
+    <None Remove="chrome-win64\ABOUT" />
+    <None Remove="chrome-win64\chrome.dll" />
+    <None Remove="chrome-win64\chrome.exe" />
+    <None Remove="chrome-win64\chrome_100_percent.pak" />
+    <None Remove="chrome-win64\chrome_200_percent.pak" />
+    <None Remove="chrome-win64\chrome_elf.dll" />
+    <None Remove="chrome-win64\chrome_proxy.exe" />
+    <None Remove="chrome-win64\chrome_pwa_launcher.exe" />
+    <None Remove="chrome-win64\chrome_wer.dll" />
+    <None Remove="chrome-win64\D3DCompiler_47.dll" />
+    <None Remove="chrome-win64\dxcompiler.dll" />
+    <None Remove="chrome-win64\dxil.dll" />
+    <None Remove="chrome-win64\elevation_service.exe" />
+    <None Remove="chrome-win64\First Run" />
+    <None Remove="chrome-win64\icudtl.dat" />
+    <None Remove="chrome-win64\libEGL.dll" />
+    <None Remove="chrome-win64\libGLESv2.dll" />
+    <None Remove="chrome-win64\locales\af.pak" />
+    <None Remove="chrome-win64\locales\am.pak" />
+    <None Remove="chrome-win64\locales\ar.pak" />
+    <None Remove="chrome-win64\locales\bg.pak" />
+    <None Remove="chrome-win64\locales\bn.pak" />
+    <None Remove="chrome-win64\locales\ca.pak" />
+    <None Remove="chrome-win64\locales\cs.pak" />
+    <None Remove="chrome-win64\locales\da.pak" />
+    <None Remove="chrome-win64\locales\de.pak" />
+    <None Remove="chrome-win64\locales\el.pak" />
+    <None Remove="chrome-win64\locales\en-GB.pak" />
+    <None Remove="chrome-win64\locales\en-US.pak" />
+    <None Remove="chrome-win64\locales\es-419.pak" />
+    <None Remove="chrome-win64\locales\es.pak" />
+    <None Remove="chrome-win64\locales\et.pak" />
+    <None Remove="chrome-win64\locales\fa.pak" />
+    <None Remove="chrome-win64\locales\fi.pak" />
+    <None Remove="chrome-win64\locales\fil.pak" />
+    <None Remove="chrome-win64\locales\fr.pak" />
+    <None Remove="chrome-win64\locales\gu.pak" />
+    <None Remove="chrome-win64\locales\he.pak" />
+    <None Remove="chrome-win64\locales\hi.pak" />
+    <None Remove="chrome-win64\locales\hr.pak" />
+    <None Remove="chrome-win64\locales\hu.pak" />
+    <None Remove="chrome-win64\locales\id.pak" />
+    <None Remove="chrome-win64\locales\it.pak" />
+    <None Remove="chrome-win64\locales\ja.pak" />
+    <None Remove="chrome-win64\locales\kn.pak" />
+    <None Remove="chrome-win64\locales\ko.pak" />
+    <None Remove="chrome-win64\locales\lt.pak" />
+    <None Remove="chrome-win64\locales\lv.pak" />
+    <None Remove="chrome-win64\locales\ml.pak" />
+    <None Remove="chrome-win64\locales\mr.pak" />
+    <None Remove="chrome-win64\locales\ms.pak" />
+    <None Remove="chrome-win64\locales\nb.pak" />
+    <None Remove="chrome-win64\locales\nl.pak" />
+    <None Remove="chrome-win64\locales\pl.pak" />
+    <None Remove="chrome-win64\locales\pt-BR.pak" />
+    <None Remove="chrome-win64\locales\pt-PT.pak" />
+    <None Remove="chrome-win64\locales\ro.pak" />
+    <None Remove="chrome-win64\locales\ru.pak" />
+    <None Remove="chrome-win64\locales\sk.pak" />
+    <None Remove="chrome-win64\locales\sl.pak" />
+    <None Remove="chrome-win64\locales\sr.pak" />
+    <None Remove="chrome-win64\locales\sv.pak" />
+    <None Remove="chrome-win64\locales\sw.pak" />
+    <None Remove="chrome-win64\locales\ta.pak" />
+    <None Remove="chrome-win64\locales\te.pak" />
+    <None Remove="chrome-win64\locales\th.pak" />
+    <None Remove="chrome-win64\locales\tr.pak" />
+    <None Remove="chrome-win64\locales\uk.pak" />
+    <None Remove="chrome-win64\locales\ur.pak" />
+    <None Remove="chrome-win64\locales\vi.pak" />
+    <None Remove="chrome-win64\locales\zh-CN.pak" />
+    <None Remove="chrome-win64\locales\zh-TW.pak" />
+    <None Remove="chrome-win64\MEIPreload\manifest.json" />
+    <None Remove="chrome-win64\MEIPreload\preloaded_data.pb" />
+    <None Remove="chrome-win64\mojo_core.dll" />
+    <None Remove="chrome-win64\notification_helper.exe" />
+    <None Remove="chrome-win64\resources.pak" />
+    <None Remove="chrome-win64\v8_context_snapshot.bin" />
+    <None Remove="chrome-win64\vk_swiftshader.dll" />
+    <None Remove="chrome-win64\vk_swiftshader_icd.json" />
+    <None Remove="chrome-win64\vulkan-1.dll" />
+    <None Remove="email.xaml" />
+    <None Remove="email_content.xaml" />
+    <None Remove="folder_content.xaml" />
+    <None Remove="home.xaml" />
+    <None Remove="info.xaml" />
+    <None Remove="login.bat" />
+    <None Remove="manual_setting.xaml" />
+    <None Remove="past_emails.xaml" />
+    <None Remove="past_emails_content.xaml" />
+    <None Remove="server-win.exe" />
+    <None Remove="setting.xaml" />
+    <None Remove="shop.xaml" />
+    <None Remove="statistic.xaml" />
+    <None Remove="text.xaml" />
+    <None Remove="text_content.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
+    <ProjectCapability Include="Msix" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Strings\**\*.resw">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Assets\start_100_100 - Копировать.svg" />
+    <Content Remove="Assets\start_100_100.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
+    <PackageReference Include="DeviceId" Version="6.6.0" />
+    <PackageReference Include="H.NotifyIcon.WinUI" Version="2.0.118" />
+    <PackageReference Include="Material.Icons" Version="2.1.6" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.2428" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.4.231008000" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="2.0.9" />
+    <PackageReference Include="MySql.Data" Version="8.2.0" />
+    <PackageReference Include="OpenAI" Version="1.7.2" />
+    <PackageReference Include="PayPal" Version="1.9.1" />
+    <PackageReference Include="Syncfusion.Chart.WinUI" Version="23.1.44" />
+    <PackageReference Include="Syncfusion.Core.WinUI" Version="23.1.44" />
+    <PackageReference Include="System.Security.SecureString" Version="4.3.0" />
+    <PackageReference Include="TextCopy" Version="6.2.1" />
+    <PackageReference Include="WinUI3Localizer" Version="2.1.0" />
+    <PackageReference Include="WinUIEx" Version="2.3.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="chrome-win64\121.0.6150.0.manifest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\ABOUT">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\chrome.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\chrome.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\chrome_100_percent.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\chrome_200_percent.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\chrome_elf.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\chrome_proxy.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\chrome_pwa_launcher.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\chrome_wer.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\D3DCompiler_47.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\dxcompiler.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\dxil.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\elevation_service.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\First Run">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\icudtl.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\libEGL.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\libGLESv2.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\af.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\am.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\ar.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\bg.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\bn.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\ca.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\cs.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\da.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\de.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\el.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\en-GB.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\en-US.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\es-419.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\es.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\et.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\fa.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\fi.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\fil.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\fr.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\gu.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\he.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\hi.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\hr.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\hu.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\id.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\it.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\ja.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\kn.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\ko.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\lt.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\lv.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\ml.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\mr.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\ms.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\nb.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\nl.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\pl.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\pt-BR.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\pt-PT.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\ro.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\ru.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\sk.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\sl.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\sr.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\sv.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\sw.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\ta.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\te.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\th.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\tr.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\uk.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\ur.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\vi.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\zh-CN.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\locales\zh-TW.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\MEIPreload\manifest.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\MEIPreload\preloaded_data.pb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\mojo_core.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\notification_helper.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\resources.pak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\v8_context_snapshot.bin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\vk_swiftshader.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\vk_swiftshader_icd.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chrome-win64\vulkan-1.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="login.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="server-win.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mail Send.Core\Mail Send.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="manual_setting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="info.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="account.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="account_content_auto.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="account_content.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="email.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="email_content.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="folder_content.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="home.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="shop.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="past_emails.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="past_emails_content.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="setting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="statistic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="text.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="text_content.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  
+  <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
+    <HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
+  </PropertyGroup>
+  
+  <ProjectExtensions><VisualStudio><UserProperties Reactor_Commands="" Reactor_Configuration="Release" Reactor_Deploy="0" Reactor_Enabled="1" Reactor_Output="" Reactor_Project="" /></VisualStudio></ProjectExtensions>
+</Project>

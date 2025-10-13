@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="Mail_Send.past_emails_content"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Mail_Send"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:views="using:Mail_Send.ViewModels"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <views:localizated x:Name="ViewModel" />
+    </Page.DataContext>
+    <Page.Resources>
+        <CollectionViewSource x:Key="folder_list"/>
+        <CollectionViewSource x:Key="text_list"/>
+    </Page.Resources>
+    <StackPanel Orientation="Vertical" Spacing="10">
+
+        <StackPanel Orientation="Horizontal" Spacing="20" >
+            <FontIcon Glyph="&#xE8E5;"  FontSize="20" HorizontalAlignment="Left" Margin="20,0,0,0" Foreground="#F4A232"></FontIcon>
+            <TextBox Name="email_name" HorizontalAlignment="Stretch"  VerticalAlignment="Center" VerticalContentAlignment="Center" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="50" CornerRadius="2" BorderThickness="1" >
+
+                <TextBox.BorderBrush>
+                    <SolidColorBrush Color="Gray" Opacity="0"/>
+                </TextBox.BorderBrush>
+            </TextBox>
+        </StackPanel>
+        <Grid  Margin="20,0,20,0">
+            <TextBox Name="email_text" PlaceholderText="Текст"  AcceptsReturn="True" TextWrapping="Wrap" HorizontalAlignment="Stretch"  VerticalAlignment="Top" Background="White" Height="200" CornerRadius="2" BorderThickness="1">
+
+                <TextBox.BorderBrush>
+                    <SolidColorBrush Color="Gray" Opacity="0.2"/>
+                </TextBox.BorderBrush>
+    
+            </TextBox>
+
+            <Image Width="32" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Right" Source="/Assets/star-2-svgrepo-com.svg" />
+            <Button Name="generate_email" VerticalAlignment="Bottom" HorizontalAlignment="Right"  Width="32" Height="32">
+    
+
+            </Button>
+        </Grid>
+        <Grid>
+            <CheckBox Content="Рандом" Margin="20,0,20,0" Name="random_texts"></CheckBox>
+
+        </Grid>
+        <StackPanel Name="folder_item"  Margin="20,0,20,0">
+            <ItemsControl Name="folder_items" ItemsSource="{Binding Source={StaticResource folder_list}}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid x:Name="customGrid"  Tag="{Binding id}"  BorderThickness="1"   CornerRadius="2" Height="50">
+                            <Grid.BorderBrush>
+                                <SolidColorBrush Color="Gray" Opacity="0.3"></SolidColorBrush>
+                            </Grid.BorderBrush>
+                            <SymbolIcon Symbol="Page" HorizontalAlignment="Left" Foreground="Gray"  Margin="20,0,0,0"></SymbolIcon>
+
+                            <TextBlock x:Name="fileNameTextBlock" Foreground="Gray" TextAlignment="Left" Text="{Binding name}" VerticalAlignment="Center"
+ HorizontalAlignment="Left" Margin="60,0,112,10"/>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <ItemsControl Name="files_items" ItemsSource="{Binding Source={StaticResource text_list}}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid x:Name="customGrid"  Tag="{Binding id}"  BorderThickness="1"   CornerRadius="2" Height="50">
+                            <Grid.BorderBrush>
+                                <SolidColorBrush Color="Gray" Opacity="0.3"></SolidColorBrush>
+                            </Grid.BorderBrush>
+                            <SymbolIcon Symbol="Page" HorizontalAlignment="Left" Foreground="Gray"  Margin="20,0,0,0"></SymbolIcon>
+
+                            <TextBlock x:Name="fileNameTextBlock" Foreground="Gray" TextAlignment="Left" Text="{Binding topic}" VerticalAlignment="Center"
+   HorizontalAlignment="Left" Margin="60,0,112,10"/>
+
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+
+        </StackPanel>
+
+
+
+    </StackPanel>
+</Page>

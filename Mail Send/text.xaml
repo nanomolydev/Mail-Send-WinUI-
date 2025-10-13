@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="Mail_Send.text"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Mail_Send"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:views="using:Mail_Send.ViewModels"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <views:localizated x:Name="ViewModel" />
+    </Page.DataContext>
+    <Page.Resources>
+        <CollectionViewSource x:Key="folder_list"/>
+        <CollectionViewSource x:Key="text_list"/>
+    </Page.Resources>
+    <Grid>
+
+        <TextBlock Text="{x:Bind ViewModel.GetString('text_page'), Mode=OneWay}" Margin="25,40,0,0" FontSize="25" >
+        </TextBlock>
+        <StackPanel Spacing="5" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,40,25,0">
+            <Button Name="import_file" Click="import_file_Click">
+                <ToolTipService.ToolTip>
+                    <ToolTip Content="{x:Bind ViewModel.GetString('import'), Mode=OneWay}"/>
+                </ToolTipService.ToolTip>
+                <FontIcon Glyph="&#xE752;"></FontIcon>
+            </Button>
+            <Button Name="export_file" Click="export_file_Click">
+                <ToolTipService.ToolTip>
+                    <ToolTip Content="{x:Bind ViewModel.GetString('export'), Mode=OneWay}"/>
+                </ToolTipService.ToolTip>
+                <FontIcon Glyph="&#xE896;"></FontIcon>
+            </Button>
+            <Button Click="create_folder_Click" >
+                <ToolTipService.ToolTip>
+                    <ToolTip Content="{x:Bind ViewModel.GetString('Create_folder'), Mode=OneWay}"/>
+                </ToolTipService.ToolTip>
+                <FontIcon Glyph="&#xE8F4;" ></FontIcon>
+            </Button>
+        </StackPanel>
+        
+        <StackPanel Margin="25, 100, 25, 0" Spacing="5">
+            <ScrollView Margin="25,0,25,0">
+                <ListView Name="folder_view" SelectionMode="None"  SelectionChanged="folder_view_SelectionChanged">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Height="50"  Tag="{Binding id}" HorizontalAlignment="Stretch" Name="folder" RightTapped="folder_RightTapped">
+                                <SymbolIcon Symbol="Folder" HorizontalAlignment="Left" Margin="20,0,0,0" Foreground="#F4A232" VerticalAlignment="Center"></SymbolIcon>
+                                <TextBlock Margin="60,0,0,0" VerticalAlignment="Center" Name="folder_name" Text="{Binding name}"></TextBlock>
+                                <Button Background="Transparent" Height="50" HorizontalAlignment="Stretch" CornerRadius="3" Click="open_folder">
+                                    <Button.BorderBrush>
+                                        <SolidColorBrush Color="Gray" Opacity="0.3"></SolidColorBrush>
+                                    </Button.BorderBrush>
+
+                                </Button>
+
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                    <ListView.ItemsSource>
+                        <Binding Source="{StaticResource folder_list}"/>
+                    </ListView.ItemsSource>
+                </ListView>
+            </ScrollView>
+
+            <Line Stroke="Gray" HorizontalAlignment="Center"
+              X1="0" Y1="0"
+              X2="300" Y2="0"
+              StrokeThickness="1"/>
+            <ScrollView Margin="25,0,25,0">
+                <ListView Name="text_view" SelectionMode="None"  SelectionChanged="text_view_SelectionChanged">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid  Height="50"  Tag="{Binding id}" HorizontalAlignment="Stretch" RightTapped="text_RightTapped">
+                                <SymbolIcon Symbol="OpenFile" HorizontalAlignment="Left" Margin="20,0,0,0" Foreground="#F4A232" VerticalAlignment="Center"></SymbolIcon>
+                                <TextBlock Margin="60,0,0,0" VerticalAlignment="Center" Name="text_name" Text="{Binding topic}"></TextBlock>
+                                <Button Background="Transparent" Height="50" HorizontalAlignment="Stretch" CornerRadius="3" Click="open_text" >
+                                    <Button.BorderBrush>
+                                        <SolidColorBrush Color="Gray" Opacity="0.3"></SolidColorBrush>
+                                    </Button.BorderBrush>
+
+                                </Button>
+
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                    <ListView.ItemsSource>
+                        <Binding Source="{StaticResource text_list}"/>
+                    </ListView.ItemsSource>
+                </ListView>
+            </ScrollView>
+
+        </StackPanel>
+        <TextBox PlaceholderText="{x:Bind ViewModel.GetString('add_text'), Mode=OneWay}" VerticalAlignment="Bottom" Height="50" Margin="20,5,20,20" PlaceholderForeground="Gray" Foreground="Black" Name="create_new_block" KeyDown="create_new_block_KeyDown"  CornerRadius="5"   TextChanged="create_new_block_TextChanged">
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="Black" Opacity="0.2"></SolidColorBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <SplitView FlowDirection="RightToLeft" CornerRadius="10" Name="text_content" PaneOpened="text_content_PaneOpened" HorizontalAlignment="Stretch" PaneClosed="text_content_PaneClosed" >
+            <SplitView.BorderBrush>
+                <SolidColorBrush Color="Gray" Opacity="0.3"></SolidColorBrush>
+            </SplitView.BorderBrush>
+            <SplitView.Pane >
+                <Grid Background="#FBFBFB">
+
+
+                    <Frame FlowDirection="LeftToRight" Margin="0,0,0,0" Name="text_content_frame"></Frame>
+
+                </Grid>
+            </SplitView.Pane>
+        </SplitView>
+        <Grid Height="150" Name="save_bar" VerticalAlignment="Bottom">
+            <Grid.RenderTransform>
+                <TranslateTransform x:Name="save_transform" Y="90"/>
+            </Grid.RenderTransform>
+
+        </Grid>
+    </Grid>
+</Page>
